@@ -2,8 +2,6 @@
     <head>
         <title> ERROR404 Warning!!!</title>
         <meta http-equiv=Content-Type content="text/html; charset=utf-8">
-
-
     </head>
     <body>
         <h3>ERROR404 Warning!!!</h3>

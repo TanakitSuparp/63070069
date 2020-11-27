@@ -14,7 +14,7 @@ if (mysqli_connect_errno($conn))
 }
 $res = mysqli_query($conn, 'SELECT * FROM databook');
 ?>
-    <table width="600" border="1">
+    <table class="table table-dark table-striped" width="600" border="1">
         <tr>
             <th width="100">
                 <div align="center">ชื่อสินค้า</div>

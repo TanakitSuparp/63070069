@@ -1,20 +1,20 @@
 <?php
 
 $conn = mysqli_init();
-mysqli_real_connect($conn, 'lab13-069.mysql.database.azure.com', 'it63070069@lab13-069', 'SMCbvq72', 'itflab', 3306);
+mysqli_real_connect($conn, 'lab13-069.mysql.database.azure.com', 'it63070069@lab13-069', 'SMCbvq72', 'table', 3306);
 if (mysqli_connect_errno($conn))
 {
     die('Failed to connect to MySQL: '.mysqli_connect_error());
 }
 
 
-$Product = $_POST['ชื่อสินค้า'];
-$Price = $_POST['ราคาต่อหน่วย'];
-$Discount = $_POST['ส่วนลด(%)'];
-$Total = $_POST['ราคาหลังลด'];
+$Product = $_POST['product'];
+$Price = $_POST['price'];
+$Discount = $_POST['discount'];
+$Total = $_POST['total'];
 
 
-$sql = "INSERT INTO databook (Product, Price, Discount, Total ) VALUES ('$Product', '$Price', '$Discount', '$Total')";
+$sql = "INSERT INTO databook (Product, Price, Discount, Total ) VALUES ('$product', '$price', '$discount', '$total')";
 
 
 if (mysqli_query($conn, $sql)) {

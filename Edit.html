@@ -8,11 +8,14 @@ if (mysqli_connect_errno($conn))
 }
 
 
-$Price = $_POST['price'];
-$Discount = $_POST['discount'];
+$Product = $_POST['ชื่อสินค้า'];
+$Price = $_POST['ราคาต่อหน่วย'];
+$Discount = $_POST['ส่วนลด(%)'];
+$Total = $_POST['ราคาหลังลด'];
 
 
-$sql = 'UPDATE data SET name = "Price = '.$price.'", Discount = "'.$discount.', WHERE ID = '.$id.'';
+$sql = "INSERT INTO databook (Product, Price, Discount, Total ) VALUES ('$Product', '$Price', '$Discount', '$Total')";
+
 
 if (mysqli_query($conn, $sql)) {
     echo "New record created successfully";

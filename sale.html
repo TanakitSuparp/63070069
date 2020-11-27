@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <?php
+$conn = mysqli_init();
+mysqli_real_connect($conn, 'lab13-069.mysql.database.azure.com', 'it63070069@lab13-069', 'SMCbvq72', 'table', 3306);
+if (mysqli_connect_errno($conn))
+{
+    die('Failed to connect to MySQL: '.mysqli_connect_error());
+}
+$res = mysqli_query($conn, 'SELECT * FROM databook');
+?>
+    <table width="600" border="1">
+        <tr>
+            <th width="100">
+                <div align="center">ชื่อสินค้า</div>
+            </th>
+            <th width="350">
+                <div align="center">ราคาต่อหน่ว </div>
+            </th>
+            <th width="350">
+                <div align="center">Discount </div>
+            </th>
+            <th width="350">
+                <div align="center">ส่วนลด(%) </div>
+            </th>
+            <th width="350">
+                <div align="center">การจัดการ </div>
+            </th>
+
+
+        </tr>
+        <?php
+while($Result = mysqli_fetch_array($res))
+{
+?>
+        <tr>
+            <td><?php echo $Result['Product'];?></div>
+            </td>
+            <td><?php echo $Result['Price'];?></td>
+            <td><?php echo $Result['Discount'];?></td>
+            <td><?php echo $Result['Total'];?></td>
+            <td><a href="pro1.html">
+                    <button type="submit" class="btn btn-primary">Edit</button>
+                </a>
+            </td>
+        </tr>
+        <?php
+}
+?>
+    </table>
+    <a href="pro.html">
+        <button type="submit" class="btn btn-primary">New</button>
+    </a>
+    <?php
+mysqli_close($conn);
+?>
+
+</body>
+
+</html
